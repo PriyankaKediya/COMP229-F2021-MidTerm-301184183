@@ -2,7 +2,6 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-const books = require('../models/books');
 
 // define the game model
 let book = require('../models/books');

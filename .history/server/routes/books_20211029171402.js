@@ -21,6 +21,7 @@ router.get('/', (req, res, next) => {
         books: books
       });
     }
+    console.log(books)
   });
   ;
 });

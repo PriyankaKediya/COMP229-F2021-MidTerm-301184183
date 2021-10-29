@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
       });
     }
   });
-  ;
+  console.log(book);
 });
 
 //  GET the Book Details page in order to add a new Book
