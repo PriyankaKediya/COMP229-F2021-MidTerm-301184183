@@ -1,3 +1,10 @@
+/*************************************
+  FILENAME: app.js
+  AUTHOR'S NAME: Priyanka Kediya
+  STUDENT ID: 301184183
+  WEB APP NAME: Favorite Book List App
+*************************************/
+
 /* custom JS goes here */
 
 /* pagination code from http://www.bootply.com/lxa0FF9yhw */

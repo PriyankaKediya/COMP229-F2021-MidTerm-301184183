@@ -1,3 +1,11 @@
+/*************************
+  FILENAME: routes/books.js
+  AUTHOR'S NAME: Priyanka Kediya
+  STUDENT ID: 301184183
+  WEB APP NAME: Favorite Book List App
+**************************/
+
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
@@ -27,17 +35,21 @@ router.get('/', (req, res, next) => {
 
 //  GET the Book Details page in order to add a new Book
 router.get('/add', (req, res, next) => {
-
-  res.render('books/add', {title: 'Add Book'})
     /*****************
      * ADD CODE HERE *
      *****************/
+     res.render('books/add', {title: 'Add Book'})
 });
 
 
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/add', (req, res, next) => {
   
+
+    /*****************
+     * ADD CODE HERE *
+     *****************/
+
   let newBook = book({
     "Title": req.body.title,
     "Price": req.body.price,
@@ -45,8 +57,10 @@ router.post('/add', (req, res, next) => {
     "Genre": req.body.genre
   });
  
+  //create a new book
   book.create(newBook, (err, book) => 
   {
+    //if any error
     if(err)
     {
       console.log(err);
@@ -58,11 +72,6 @@ router.post('/add', (req, res, next) => {
       res.redirect('/books');
     }
   });
- 
-    /*****************
-     * ADD CODE HERE *
-     *****************/
-
 });
 
 // GET the Book Details page in order to edit an existing Book
@@ -90,9 +99,7 @@ router.get('/edit/:id', (req, res, next) =>
 
 // POST - process the information passed from the details form and update the document
 router.post('/edit/:id', (req, res, next) =>
-  {
-
-   
+  {   
     /*****************
      * ADD CODE HERE *
      *****************/
@@ -107,6 +114,7 @@ router.post('/edit/:id', (req, res, next) =>
         "Genre": req.body.genre
       });
 
+      //updates edited details
       book.updateOne({_id : id}, updatedBook, (err) =>
       {
         if(err)
@@ -132,6 +140,7 @@ router.get('/delete/:id', (req, res, next) => {
 
     let id = req.params.id;
 
+    //delete book
     book.remove({_id : id}, (err) =>
     {
       if(err)

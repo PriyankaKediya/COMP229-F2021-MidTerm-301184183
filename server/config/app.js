@@ -1,4 +1,12 @@
-// moddules for node and express
+/*************************
+  FILENAME: config/app.js
+  AUTHOR'S NAME: Priyanka Kediya
+  STUDENT ID: 301184183
+  WEB APP NAME: Favorite Book List App
+**************************/
+
+
+// modules for node and express
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -10,12 +18,13 @@ let mongoose = require('mongoose');
 // URI
 let DB = require('./db');
 
-mongoose.connect(process.env.URI || DB.RemoteURI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.RemoteURI || DB.LocalURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
 mongoDB.once('open', ()=> {
-  console.log("Connected to MongoDB...");
+  //console.log("Connected to MongoDB...");
+  console.log(`Connected to MongoDB at: ${DB.HostName} `);
 });
 
 

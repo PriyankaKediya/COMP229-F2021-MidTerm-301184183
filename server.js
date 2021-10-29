@@ -1,3 +1,11 @@
+/***********************************
+  FILENAME: app.ejs
+  AUTHOR'S NAME: Priyanka Kediya
+  STUDENT ID: 301184183
+  WEB APP NAME: Favorite Book List App
+************************************/
+
+
 let app = require('./server/config/app');
 let debug = require('debug')('comp308-w2019-midterm:server');
 let http = require('http');

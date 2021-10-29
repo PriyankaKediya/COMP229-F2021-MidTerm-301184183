@@ -1,5 +1,5 @@
 <!-----------------------------------
-  FILENAME: edit.ejs
+  FILENAME: app.ejs
   AUTHOR'S NAME: Priyanka Kediya
   STUDENT ID: 301184183
   WEB APP NAME: Favorite Book List App
@@ -7,9 +7,9 @@
 
 <%- include('../partials/header.ejs'); %>
 
-<!-- content for the edit page -->
+<!-- content for the add page -->
 
-<!-- content for the edit page -->
+<!-- Table for adding books -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label for="NameTextField">Title</label>
                     <input type="text" class="form-control"
-                    id="NameTextField" value = "<%= book.Title %>"
+                    id="NameTextField"
                     placeholder="Enter the Book Title"
                     name="title" required>
                 </div>
@@ -27,28 +27,26 @@
                 <div class="form-group">
                     <label for="PriceTextField">Price</label>
                     <input type="text" class="form-control" id="PriceTextField"
-                    placeholder="Enter the Book Price" 
-                    value = "<%= book.Price %>"
-                    name="price" required>
+                    placeholder="Enter the Book Price" name="price" required>
                 </div>
 
                 <div class="form-group">
                     <label for="AuthorTextField">Author</label>
                     <input type="text" class="form-control" id="AuthorTextField"
-                    placeholder="Enter the Book Author"
-                    value = "<%= book.Author %>"
-                    name="author" required>
+                    placeholder="Enter the Book Author" name="author" required>
                 </div>
                 <div class="form-group">
                     <label for="GenreTextField">Genre</label>
                     <input type="text" class="form-control" id="GenreTextField"
-                    placeholder="Enter the Book Genre"
-                    value = "<%= book.Genre %>"
-                    name="genre" required>
+                    placeholder="Enter the Book Genre" name="genre" required>
                 </div>
                 
-                <!-- submit and cancel buttons -->
-                <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+                <!-- submit button -->
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check-square-o"></i> Submit
+                </button>
+                
+                <!-- cancel button -->
                 <a href="/books" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
 
             </form>
@@ -69,4 +67,3 @@
 
 
 <%- include('../partials/footer.ejs'); %>
-
